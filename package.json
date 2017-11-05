@@ -1,0 +1,19 @@
+{
+  "name": "develxhr2",
+  "version": "0.0.0",
+  "description": " adds HTML parsing support to XMLHttpRequest, which originally supported only XML parsing. This feature allows Web apps to obtain an HTML resource as a parsed DOM using XMLHttpRequest.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevelDoe/DevelXHR2.git"
+  },
+  "author": "Andree \"DevelDoe\" Ray <andreeray@live.com> (http://andreeray.se)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevelDoe/DevelXHR2/issues"
+  },
+  "homepage": "https://github.com/DevelDoe/DevelXHR2#readme"
+}

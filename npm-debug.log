@@ -1,0 +1,51 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'adduser' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.4
+4 verbose adduser before first PUT { _id: 'org.couchdb.user:develdoe',
+4 verbose adduser   name: 'develdoe',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'andreeray@live.com',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2017-11-05T17:24:21.805Z' }
+5 verbose request uri https://registry.npmjs.org/-/user/org.couchdb.user:develdoe
+6 verbose request new user, so can't send auth
+7 info attempt registry request try #1 at 18:24:21
+8 verbose request id b8d21bc517eb05d7
+9 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:develdoe
+10 info retry will retry, error on last attempt: Error: self signed certificate in certificate chain
+11 info attempt registry request try #2 at 18:24:32
+12 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:develdoe
+13 info retry will retry, error on last attempt: Error: self signed certificate in certificate chain
+14 info attempt registry request try #3 at 18:25:32
+15 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:develdoe
+16 verbose request invalidating C:\Users\andreer\AppData\Roaming\npm-cache\registry.npmjs.org\-\user\org.couchdb.user_3Adeveldoe on PUT
+17 verbose adduser back [ { Error: self signed certificate in certificate chain
+17 verbose adduser       at Error (native)
+17 verbose adduser       at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+17 verbose adduser       at emitNone (events.js:86:13)
+17 verbose adduser       at TLSSocket.emit (events.js:185:7)
+17 verbose adduser       at TLSSocket._finishInit (_tls_wrap.js:610:8)
+17 verbose adduser       at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38) code: 'SELF_SIGNED_CERT_IN_CHAIN' },
+17 verbose adduser   undefined,
+17 verbose adduser   undefined ]
+18 verbose stack Error: self signed certificate in certificate chain
+18 verbose stack     at Error (native)
+18 verbose stack     at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+18 verbose stack     at emitNone (events.js:86:13)
+18 verbose stack     at TLSSocket.emit (events.js:185:7)
+18 verbose stack     at TLSSocket._finishInit (_tls_wrap.js:610:8)
+18 verbose stack     at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+19 verbose cwd C:\Development\DevelXHR2
+20 error Windows_NT 10.0.14393
+21 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "adduser"
+22 error node v6.11.4
+23 error npm  v3.10.10
+24 error code SELF_SIGNED_CERT_IN_CHAIN
+25 error self signed certificate in certificate chain
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]
