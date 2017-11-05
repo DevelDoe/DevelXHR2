@@ -1,10 +1,11 @@
 module.exports = {
-    post: function() {
-        var args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments))
-        console.log(args)
+    get: function(id,url,isAsync) {
+        console.log(isAsync)
+        var isAsync = isAsync === undefined ? || true
+        console.log(isAsync)
         var httpRequest
 
-        document.getElementById(options.id).addEventlistener('click', makeRequest)
+        document.getElementById(id).addEventListener('click', makeRequest)
 
         var makeRequest = function(options) {
             httpRequest = new XMLHttpRequest()
@@ -15,7 +16,7 @@ module.exports = {
             }
 
             httpRequest.onreadystatechange = logContents
-            httpRequest.open(options.request, options.url, options.async)
+            httpRequest.open(GET, url, isAsync)
             httpRequest.send()
         }
 
