@@ -1,32 +1,35 @@
 module.exports = {
-    post: function() {
-        var args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments))
-        console.log(args)
-        var httpRequest
+    /**
+     * @param {string} url - The end point
+     * @param {boolan} asynchronous - Synchronous or asynchronous request
+     */
+    get: function() {
+        var args = (arguments === 1 ? [arguments[0]] : Array.apply(null, arguments))
+        var url = args.shift()
+        var asynchronous = (args.length > 0 ? args.shift() : true)
 
-        document.getElementById(options.id).addEventlistener('click', makeRequest)
+        httpRequest = new XMLHttpRequest()
 
-        var makeRequest = function(options) {
-            httpRequest = new XMLHttpRequest()
-
-            if(!httpRequest) {
-                console.log('Giving up :( Cannot create an XMLHTTP instance')
-                return false
-            }
-
-            httpRequest.onreadystatechange = logContents
-            httpRequest.open(options.request, options.url, options.async)
-            httpRequest.send()
+        if(!httpRequest) {
+            alert('Giving up :( Cannot create an XMLHTTP instance')
+            return false
         }
+        httpRequest.onreadystatechange = alertContents
+        httpRequest.open('GET', url, asynchronous)
+        httpRequest.send()
+    }
+}
 
-        var logContents = function() {
-            if(httpRequest.readyState === XMLHttpRequest.DONE) {
-                if(httpRequest.status === 200) {
-                    console.log(httpRequest.responseText)
-                } else {
-                    console.log('There was a problem with the request.')
-                }
+function alertContents() {
+    try {
+        if(httpRequest.readyState === XMLHttpRequest.DONE) {
+            if(httpRequest.status === 200) {
+                alert(httpRequest.responseText)
+            } else {
+                alert('There was a problem with the request.')
             }
         }
+    } catch (e) {
+         alert('Caught Exception: ' + e.description);
     }
 }
