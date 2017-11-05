@@ -1,7 +1,7 @@
 module.exports = {
     post: function() {
         var args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments))
-        var options = args.pop()
+        console.log(args)
         var httpRequest
 
         document.getElementById(options.id).addEventlistener('click', makeRequest)
